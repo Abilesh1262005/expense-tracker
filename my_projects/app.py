@@ -9,12 +9,17 @@ app.secret_key="mysecret"
 
 
 # DATABASE CONNECTION
+import os
+
 db = mysql.connector.connect(
-    host="localhost",
-    user="root",
-    password="Root@123",
-    database="expense_db"
+    host=os.environ.get("DB_HOST"),
+    user=os.environ.get("DB_USER"),
+    password=os.environ.get("DB_PASSWORD"),
+    database=os.environ.get("DB_NAME")
 )
+
+app.secret_key = os.environ.get("SECRET_KEY")
+
 
 cursor = db.cursor()
 
@@ -153,3 +158,4 @@ def home():
 
 if __name__ == "__main__":
     app.run(debug=True)
+
