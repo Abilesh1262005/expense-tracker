@@ -1,0 +1,10 @@
+<h2>Category Summary</h2>
+<table>
+<tr><th>Category</th><th>Total</th></tr>
+{% for d in data %}
+<tr>
+<td>{{d[0]}}</td>
+<td>{{d[1]}}</td>
+</tr>
+{% endfor %}
+</table>

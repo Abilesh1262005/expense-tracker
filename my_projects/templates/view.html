@@ -1,0 +1,35 @@
+<link rel="stylesheet" href="/static/style.css">
+
+<div class="container">
+<h2>All Expenses</h2>
+
+<table>
+<tr>
+<th>Amount</th>
+<th>Category</th>
+</tr>
+
+{% for e in expenses %}
+<tr>
+<td>{{e[0]}}</td>
+<td>{{e[1]}}</td>
+</tr>
+{% endfor %}
+
+</table>
+
+<br>
+<a href="/">Go Back</a>
+</div>
+<th>Action</th>
+
+{% for e in expenses %}
+<tr>
+<td>{{e[0]}}</td>
+<td>{{e[1]}}</td>
+<td>
+<a href="/delete/{{e[2]}}">Delete</a>
+</td>
+</tr>
+{% endfor %}
+

@@ -1,0 +1,24 @@
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<h2>Expense Chart</h2>
+
+<canvas id="myChart"></canvas>
+
+<script>
+var categories = {{ categories|tojson }};
+var amounts = {{ amounts|tojson }};
+
+new Chart(document.getElementById("myChart"), {
+    type: 'bar',
+    data: {
+        labels: categories,
+        datasets: [{
+            label: 'Expenses',
+            data: amounts
+        }]
+    }
+});
+</script>
+
+<br>
+<a href="/">Go Back</a>
